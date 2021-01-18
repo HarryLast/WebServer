@@ -1,0 +1,20 @@
+上一个版本中我们已经实现了给客户端浏览器响应了一个固定页面.
+这个版本中我们要根据用户在浏览器地址上输入不同的网址,响应他说请求的
+实际页面.
+
+例如用户在浏览器上输入下面两个网址:
+http://localhost:8088/myweb/index.html
+http://localhost:8088/myweb/hello.html
+可以分别在浏览器上看到这两个页面.
+
+思路
+1:浏览器地址栏(URL)中上面两个路径中不同的部分是抽象路径部分.而这部分
+体现在请求行中的抽象路径部分的.我们在解析请求时将这部分信息保存在呢
+HttpRequest的uri属性上了.因此我们在ClientHandler处理请求的环节中
+通过HttpRequest获取uri这个属性的值,应该可以得到上面两个网址中的抽象
+路径部分即:
+/myweb/index.html或/myblog/hello.html
+
+2:而实际这两个页面都是在webapps目录下的,并且在webapps目录下的子目录
+位置正好也是上述路径.因此我们在响应客户端时,new Flie()指定的该页面的
+路径就可以从webapps下根据uri的值定位到这个页面,conger响应给客户端了.

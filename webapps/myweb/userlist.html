@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<center>
+    <h1>用户列表</h1>
+    <table border="1">
+        <tr>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>昵称</td>
+            <td>年龄</td>
+        </tr>
+        <tr th:each="user:${users}">
+            <td th:text="${user.username}">张三</td>
+            <td th:text="${user.password}">123456</td>
+            <td th:text="${user.nickname}">阿三</td>
+            <td th:text="${user.age}">22</td>
+        </tr>
+        <tr th:remove="all"><!--告知thymeleaf生成动态页面时,这个标签及它的子标签都不要-->
+            <td >李四</td>
+            <td>55667788</td>
+            <td>老四</td>
+            <td>33</td>
+        </tr>
+    </table>
+</center>
+
+</body>
+</html>

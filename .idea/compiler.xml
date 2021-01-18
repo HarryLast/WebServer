@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pachong" />
+        <module name="V9" />
+        <module name="V8" />
+        <module name="V7" />
+        <module name="V6" />
+        <module name="V5" />
+        <module name="V4" />
+        <module name="V1" />
+        <module name="V17" />
+        <module name="V16" />
+        <module name="V15" />
+        <module name="V14" />
+        <module name="V13" />
+        <module name="V12" />
+        <module name="V11" />
+        <module name="V10" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pachong" target="1.8" />
+      <module name="V2" target="1.8" />
+      <module name="V3" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

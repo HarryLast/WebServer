@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的首页</title>
+</head>
+<body>
+    <center>
+        <!--
+            当在页面上要加载其他资源时(例如图片,样式,脚本文件等)
+            我们需要在对应的标签上指定该资源的路径.而这里的路径通常
+            也是使用相对路径的.
+            需要注意,这里相对路径中的"./"当前目录的位置与java中不同,
+            因为这个路径最终是被浏览器解释的,而不是java虚拟机.
+
+            浏览器在理解页面上的"./"的位置时是根据请求页面时
+            地址栏中的路径来确定的,具体理解为当前页面所在的目录.
+            例如:
+            我们请求当前index.html时在地址栏输入的路径是:
+            http://localhost:8088/myweb/index.html
+
+            那么在这个页面上所有指定相对路径"./"的地方,对应的路径为:
+            http://localhost:8088/myweb/
+
+            因此,下面图片中的src="./logo.png"实际路径浏览器理解为:
+            http://localhost:8088/myweb/logo.png
+
+         -->
+        <h1 >百度</h1>
+        <img src="./11.jpg"><br>
+        <input type="text" size="32">
+        <input type="button" value="百度一下" onclick="alert('点你妹啊!')" ><br>
+        <a href="https://ai.taobao.com/">淘宝</a>
+        <a href="./reg.html">去注册</a>
+        <a href="./login.html">去登录</a>
+        <a href="./showAllUser">用户列表</a>
+
+    </center>
+
+</body>
+</html>

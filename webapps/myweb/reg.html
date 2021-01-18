@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>欢迎注册</h1>
+    <!--
+        form表单
+        表单是用来将用户在页面上输入的信息提交给服务端使用的.
+        所有需要提交的<input>标签必须包含在form标签中才可以.否则会被忽略.
+
+        form标签上有两个重要的属性:
+        method:表单提交的方式,有两个值可选:
+                GET:地址栏形式提交,表单中输入的数据会被拼接到URL中提交给服务端
+                POST:表单数据会被包含在请求的消息正文中提交给服务端.通常表单数据中含有用户隐私
+                信息或者附件提交时要使用post形式.
+                注:get,post大小写均可.
+        action:用来指定当前表单提交的路径,这个路径需要服务端配合处理.
+
+        点击提交按钮(这里是注册按钮)后,表单按照method指定的get方式提交.那么所有表单中输入框
+        <input>标签中用户输入的信息会被拼接到URL的抽象路径部分中"?"右侧提交.地址如下:
+        http://localhost:8088/myweb/regUser?username=ffsfdfsd&password=&nickname=dfsdfsd&age=ffsdsdf
+        在上述地址中,抽象路径部分为:
+        /myweb/regUser?username=ffsfdfsd&password=&nickname=dfsdfsd&age=ffsdsdf
+        而这个路径被"?"分割成两部分,左侧为请求部分,右侧为参数部分
+
+        请求部分:/myweb/regUser这个值是因为form中action指定的路径为:"'/regUser".
+                由于请求当前注册页面时的路径是:http://localhost:8088/myweb/regUser
+                因此action="./regUser",则表单提交的路径就是:http://localhost:8088/myweb/regUser
+                所以抽象路径中请求部分就是:/myweb/regUser
+
+        参数部分的格式为:name1=value&name2=value2&...
+        每一个参数中的名字就是form中输入框的名字,而对应的值就是该输入框中用户输入的信息
+
+    -->
+    <form method="get" action="./regUser">
+        <table border="1">
+            <tr>
+                <td>用户名</td>
+                <!--
+                    form表单中的input标签必须要指定name属性来给该输入框指定名字,否则
+                    用户在该输入框中输入的信息会被form表单忽略
+                -->
+                <td><input name="username" type="text"></td>
+            </tr>
+
+            <tr>
+                <td>密码</td>
+                <td><input name="password" type="password"></td>
+            </tr>
+
+            <tr>
+                <td>昵称</td>
+                <td><input name="nickname" type="text"></td>
+            </tr>
+
+            <tr>
+                <td>年龄</td>
+                <td><input name="age" type="text"></td>
+            </tr>
+
+            <tr>
+                <!--
+                td中的属性colspan表示当前列是夸几列显示
+                align属性是表示内容的对齐方式
+                -->
+
+
+                <td colspan="2" align="center">
+                    <!--
+                        提交表单的按钮,type类型为submit.
+                        需要注意该按钮必须被包含在一个form表单中才能发挥作用,此时点击这个
+                        按钮就会把包含它的表单提交了.提交的路径由表单自身的action属性决定
+                    -->
+                    <input type="submit" value="注册">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</center>
+
+</body>
+</html>
